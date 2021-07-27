@@ -1,0 +1,18 @@
+<h1>There's {{books.length}} books</h1>
+<a routerLink="/book/create">Create Book</a>
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Book Name</td>
+    <td>Author</td>
+<!--    <td colspan="2"></td>-->
+  </tr>
+  <tr *ngFor="let book of books; index as i">
+    <td> {{i + 1}}</td>
+    <td><a [routerLink]="['detail',book.id]">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><a [routerLink]="['/book/edit',book.id]">Edit</a></td>
+    <td><a [routerLink]="['/book/delete',book.id]">Delete</a></td>
+  </tr>
+</table>
